@@ -8,8 +8,8 @@ class CSVDataSource:
         # test opent he file to make sure it exists
         open(self.datafile, 'r').close()
 
-    def get_users(self, col_name):
+    def get_users(self, usercol, namecol):
         with open(self.datafile, 'r', newline='') as f:
             reader = csv.DictReader(f)
             for row in reader:
-                yield row[col_name]
+                yield (row[usercol], row[namecol])

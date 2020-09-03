@@ -68,7 +68,7 @@ class GHOrg(RepoOrgBase):
 
     def check_valid_user(self, username):
         try:
-            user = self.github.get_user(username)
+            self.github.get_user(username)
         except UnknownObjectException:
             return False
         return True

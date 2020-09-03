@@ -25,6 +25,15 @@ A very simple and hacky datasource to github organization synchronization tool.
 `python3 gitbot.py -c [name of username column] -t [github apikey] [CSV datafile] [organization]`
 
 Additional options include:
+- `--help` : print integrated help message
+- `--name-fmt` : set the basename that the variable name column will be applied
+    to (i.e. `my-basename{}-year` will replace the `{}` with the values of the
+    specified name column
+- `--name-col` : set the column that will be used to populate the repo names'
+    format strings
+- `--user-col` : set the columns of usernames that will be synced to the org
+- `--team` : set the team that all users will be added to if they are not
+    members already
 - `--interactive` : forces the script to confirm all chagnes it will make before
     executing them
 
